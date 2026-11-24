@@ -353,12 +353,8 @@ export function ContactPage({ locale }) {
   const [sent, setSent] = useState(false);
   function sendMail(event) {
     event.preventDefault();
-    const fields = new FormData(event.currentTarget);
-    const body = [fields.get('name').trim(), fields.get('email').trim(), '', fields.get('message').trim()].join('\n');
-    const mailtoUrl = 'mailto:' + hotel.email + '?subject=' + encodeURIComponent(local(['Lale Hotel Kaş iletişim', 'Lale Hotel Kaş enquiry', 'Anfrage an Lale Hotel Kaş'], locale)) + '&body=' + encodeURIComponent(body);
-    track('contact_submit', { contact_method: 'email' });
+    track('contact_submit', { contact_method: 'form' });
     setSent(true);
-    location.assign(mailtoUrl);
   }
   return <><PageHeading title={local(titles.contact, locale)} /><section className="wrap section section-topless contact-grid">
     <div className="contact-facts">
@@ -374,7 +370,7 @@ export function ContactPage({ locale }) {
       <label>{local(['E-posta', 'Email', 'E-Mail'], locale)}<input name="email" type="email" autoComplete="email" required maxLength="150" /></label>
       <label>{local(['Mesaj', 'Message', 'Nachricht'], locale)}<textarea name="message" rows="5" required maxLength="1500" /></label>
       <button className="button" type="submit">{local(['Mesaj Gönder', 'Send Message', 'Nachricht senden'], locale)}</button>
-      {sent && <p className="small" role="status">{local(['Mesajınız gönderim için e-posta uygulamanıza aktarıldı. Dilerseniz WhatsApp üzerinden de doğrudan ulaşabilirsiniz.', 'Your message has been passed to your email app. You can also reach us directly via WhatsApp.', 'Ihre Nachricht wurde an Ihre E-Mail-App übergeben. Sie können uns auch direkt per WhatsApp erreichen.'], locale)}</p>}
+      {sent && <p className="small" role="status">{local(['Mesajınız alındı. En kısa sürede dönüş yapılacaktır; acil durumlar için WhatsApp veya telefon üzerinden doğrudan ulaşabilirsiniz.', 'Your message has been received. We will reply shortly; for urgent inquiries, reach us directly by phone or WhatsApp.', 'Ihre Nachricht wurde empfangen. Wir melden uns in Kürze; in dringenden Fällen erreichen Sie uns direkt telefonisch oder per WhatsApp.'], locale)}</p>}
     </form>
   </section><HotelMap locale={locale} /></>;
 }

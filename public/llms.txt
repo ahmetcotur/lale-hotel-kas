@@ -1,0 +1,39 @@
+# Lale Hotel Kaş
+
+> Family-run boutique hotel in Küçükçakıl, Kaş (Antalya, Turkey), operating since the 1970s and renovated in 2017. Approx. 100 metres (2 minutes on foot) from Küçük Çakıl Beach and 400 metres from Kaş harbour.
+
+## Key Facts
+- **Name:** Lale Hotel Kaş
+- **Address:** Andifli Mahallesi, Hükümet Caddesi No: 19, 07580 Kaş / Antalya, Türkiye
+- **Coordinates:** 36.19823, 29.64385
+- **Phone:** +90 242 836 10 74
+- **WhatsApp:** https://wa.me/905332153595
+- **Email:** info@lalehotelkas.com
+- **Check-in / Check-out:** 14:00 / 12:00
+- **Direct Booking & Online Sales:** Direct online booking and room sales are handled directly on the website (`/tr/rezervasyon/`, `/en/booking/`, `/de/buchung/`), as well as via phone and WhatsApp.
+- **Amenities:** Breakfast buffet, free Wi-Fi, private guest parking, air conditioning, garden terrace, balconies (sea/islands/city/mountain views depending on room category)
+- **Languages:** Turkish (`/tr/`), English (`/en/`), German (`/de/`)
+
+## Distances (Approximate)
+- Küçük Çakıl Beach: ~100 m
+- Kaş Harbour: ~400 m
+- Kaş Town Centre: ~500 m
+- Büyük Çakıl Beach: ~1.3 km
+
+## Room Categories
+- [Deniz ve Adalar Manzaralı / Sea and Islands View](https://lalehotelkas.com/tr/odalar/deniz-ve-adalar-manzarali/): 24–28 m², up to 3 guests, balcony overlooking the Mediterranean and Meis (Kastellorizo).
+- [Üç Kişilik Şehir Manzaralı / Triple Room with City View](https://lalehotelkas.com/tr/odalar/uc-kisilik-sehir-manzarali/): 28–30 m², up to 3 guests, balcony overlooking Kaş.
+- [Çift Kişilik Şehir Manzaralı / Double Room with City View](https://lalehotelkas.com/tr/odalar/cift-kisilik-sehir-manzarali/): 20–27 m², up to 3 guests with extra bed, town and mountain views.
+- [Deniz Manzaralı Çatı Katı / Sea View Attic Room](https://lalehotelkas.com/tr/odalar/deniz-manzarali-cati-kati/): 30 m², up to 3 guests, top-floor sea view.
+- [Dağ Manzaralı Çatı Katı / Mountain View Attic Room](https://lalehotelkas.com/tr/odalar/dag-manzarali-cati-kati/): 15 / 20 m², 2 or 3 guests depending on room, mountain view.
+
+## Official Pages
+- [Home (TR)](https://lalehotelkas.com/tr/)
+- [Home (EN)](https://lalehotelkas.com/en/)
+- [Home (DE)](https://lalehotelkas.com/de/)
+- [Rooms](https://lalehotelkas.com/tr/odalar/)
+- [Our Hotel](https://lalehotelkas.com/tr/hakkimizda/)
+- [Gallery](https://lalehotelkas.com/tr/galeri/)
+- [Kaş Guide](https://lalehotelkas.com/tr/kas-rehberi/)
+- [Contact](https://lalehotelkas.com/tr/iletisim/)
+- [Booking](https://lalehotelkas.com/tr/rezervasyon/)

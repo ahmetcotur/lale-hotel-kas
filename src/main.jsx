@@ -1,0 +1,14 @@
+import React from 'react';
+import { createRoot, hydrateRoot } from 'react-dom/client';
+import { App } from './App.jsx';
+import './index.css';
+
+const root = document.getElementById('root');
+const app = <App pathname={window.location.pathname} />;
+if (import.meta.env.DEV && window.location.pathname.replace(/\/$/, '') === '/__editor') {
+  import('./pages/JournalEditor.jsx').then(({ default: JournalEditor }) => createRoot(root).render(<JournalEditor />));
+} else if (root.dataset.prerendered === 'true') {
+  hydrateRoot(root, app);
+} else {
+  createRoot(root).render(app);
+}

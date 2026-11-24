@@ -196,7 +196,6 @@ export function HomePage({ locale, stay, setStay, onSearch }) {
           </figure>)}
         </div>
         <section id={local(['kas-aksamlari', 'evenings-in-kas', 'abende-in-kas'], locale)} className="hotel-evening">
-          <span className="evening-tulip" aria-hidden="true" />
           <figure className="photo-figure hotel-exterior">
             <Photo name="otel-dis-cephe-aksam" alt={photoLabel('otel-dis-cephe-aksam', locale)} className="editorial-photo" sizes="(min-width: 470px) 420px, 92vw" />
             <figcaption>{local(['Lale Hotel Kaş · Akşam', 'Lale Hotel Kaş · Evening', 'Lale Hotel Kaş · Am Abend'], locale)}</figcaption>

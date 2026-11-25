@@ -302,7 +302,7 @@ export function GuestReviewsPrompt({ locale }) {
           <div ref={railRef} className="google-reviews-rail" role="list">
             {fiveStarReviews.map(entry => (
               <article key={entry.id} className="google-review-card" role="listitem">
-                <div className="google-review-stars" aria-label={local(['5 üzerinden 5 yıldız', '5 out of 5 stars', '5 von 5 Sternen'], locale)}>
+                <div className="google-review-stars" role="img" aria-label={local(['5 üzerinden 5 yıldız', '5 out of 5 stars', '5 von 5 Sternen'], locale)}>
                   {[0, 1, 2, 3, 4].map(idx => (
                     <Star key={idx} size={14} fill="currentColor" aria-hidden="true" />
                   ))}

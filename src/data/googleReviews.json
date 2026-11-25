@@ -2,8 +2,109 @@
   "source": "google",
   "placeCid": "17649994864911914682",
   "profileUrl": "https://www.google.com/maps?cid=17649994864911914682",
-  "updatedAt": null,
-  "rating": null,
-  "reviewCount": null,
-  "reviews": []
+  "updatedAt": "2026-11-26",
+  "rating": 4.8,
+  "reviewCount": 549,
+  "reviews": [
+    {
+      "id": "google-1",
+      "author": "Rafael Villa",
+      "rating": 5,
+      "date": "2026-11-12",
+      "relativeTime": "2 hafta önce",
+      "text": "Good hotel, very close to the beach and marina. Nice view from the rooms. And great breakfast every day. Thanks.",
+      "language": "en",
+      "url": "https://www.google.com/maps?cid=17649994864911914682"
+    },
+    {
+      "id": "google-2",
+      "author": "ebru cetin",
+      "rating": 5,
+      "date": "2026-11-05",
+      "relativeTime": "3 hafta önce",
+      "text": "Kaş’a gidecekseniz başka otel aramayın. Konumu şahane ama en önemlisi otel hep tertemiz, odalar oldukça geniş ve konforlu, işletmeciler çok ilgili ve güler yüzlü insanlar. Bu standartlara göre fiyatı da oldukça makul. Tereddütsüz tavsiyedir.",
+      "language": "tr",
+      "url": "https://www.google.com/maps?cid=17649994864911914682"
+    },
+    {
+      "id": "google-3",
+      "author": "Deniz Gizer",
+      "rating": 5,
+      "date": "2026-11-05",
+      "relativeTime": "3 hafta önce",
+      "text": "Çok sıcak ortam. Nazik ağırlama. Temiz ferah oda. Her şey çok güzeldi. Yağmu kedimin enerjisi de cabası. Çok teşekkürler tüm ekibe.",
+      "language": "tr",
+      "url": "https://www.google.com/maps?cid=17649994864911914682"
+    },
+    {
+      "id": "google-4",
+      "author": "Gokce Demirtas",
+      "rating": 5,
+      "date": "2026-11-05",
+      "relativeTime": "3 hafta önce",
+      "text": "Kalabalık bir grup olarak Lale Hotel’de kaldık. Öncelikle harika bir aile işletmesi. Sıcak bir ortam. Odalar çok temiz. Cafelere, restoranlara yakın. Derya Beach’in karşısı. Tekrar geleceğiz.",
+      "language": "tr",
+      "url": "https://www.google.com/maps?cid=17649994864911914682"
+    },
+    {
+      "id": "google-5",
+      "author": "AYKAN ESER",
+      "rating": 5,
+      "date": "2026-11-05",
+      "relativeTime": "3 hafta önce",
+      "text": "Her şey çok temiz, çok güzeldi. Sahipleri çok ilgiliydi. Harika bir tatil yaptık. Çok teşekkür ederiz.",
+      "language": "tr",
+      "url": "https://www.google.com/maps?cid=17649994864911914682"
+    },
+    {
+      "id": "google-6",
+      "author": "Brenda Renes",
+      "rating": 5,
+      "date": "2026-10-29",
+      "relativeTime": "4 hafta önce",
+      "text": "Een heel fijn familiehotel. Gerund met heel veel liefde en hart voor de zaak. Het terras alleen al staat vol met goed onderhouden planten en bloemen, heel gezellig. Er is een hele lieve poes die graag komt voor een kriebel op d’r hoofd of bij d’r billen.",
+      "language": "nl",
+      "url": "https://www.google.com/maps?cid=17649994864911914682"
+    },
+    {
+      "id": "google-7",
+      "author": "Nurten Çalışkan",
+      "rating": 5,
+      "date": "2026-10-26",
+      "relativeTime": "bir ay önce",
+      "text": "Hatice hanım bize çok iyi baktı, organik ve güzel besleneceğimiz açık büfe vardı, harika idi. Otel çok güzel tavsiye ediyorum, ekip arkadaşları güler yüzlü, kendilerine çok teşekkür ediyoruz.",
+      "language": "tr",
+      "url": "https://www.google.com/maps?cid=17649994864911914682"
+    },
+    {
+      "id": "google-8",
+      "author": "Artem Arinkin",
+      "rating": 5,
+      "date": "2026-10-26",
+      "relativeTime": "bir ay önce",
+      "text": "Nice hotel with a great staff and good location. Across a public beach. Easy parking.",
+      "language": "en",
+      "url": "https://www.google.com/maps?cid=17649994864911914682"
+    },
+    {
+      "id": "google-9",
+      "author": "alex redkin",
+      "rating": 5,
+      "date": "2026-10-26",
+      "relativeTime": "bir ay önce",
+      "text": "Wonderful stay at Lale Hotel Kas! The room was spacious and impeccably clean. Breakfast was served fresh and delicious. Excellent location near downtown and beaches.",
+      "language": "en",
+      "url": "https://www.google.com/maps?cid=17649994864911914682"
+    },
+    {
+      "id": "google-10",
+      "author": "Tevfik Erkan Şahan",
+      "rating": 5,
+      "date": "2026-10-26",
+      "relativeTime": "bir ay önce",
+      "text": "We ended up seeing three hotels in two days, and Lale Hotel felt like paradise after the first two. The rooms are the most spacious and airy we found in Kaş — not a converted corner under a roof, a proper room with room to move. But what makes this place is the people running it. They are hoteliers in the old sense: you are received as a guest, not processed as a booking. The breakfast deserves its own paragraph — genuinely excellent. Parking is right in front of the hotel and walking distance to everywhere in Kaş.",
+      "language": "en",
+      "url": "https://www.google.com/maps?cid=17649994864911914682"
+    }
+  ]
 }

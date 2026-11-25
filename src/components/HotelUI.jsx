@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { ChevronDown, ChevronLeft, ChevronRight, Menu, Navigation, X } from 'lucide-react';
+import { ChevronDown, ChevronLeft, ChevronRight, Heart, Menu, Navigation, Star, X } from 'lucide-react';
 import { hotel, local, locales } from '../data/hotel.js';
 import sizes from '../data/photoSizes.json';
 import responsivePhotos from '../data/responsivePhotos.json';
@@ -197,5 +197,96 @@ export function PhotoGallery({ photos, locale, label, grid = false, featured = f
         </div>
       </dialog>
     </div>
+  );
+}
+
+export function GuestReviewsPrompt({ locale }) {
+  const [sent, setSent] = useState(false);
+  const [note, setNote] = useState('');
+  const [guestName, setGuestName] = useState('');
+
+  function handlePrivateFeedback(event) {
+    event.preventDefault();
+    if (!note.trim()) return;
+    setSent(true);
+    setNote('');
+    setGuestName('');
+  }
+
+  return (
+    <section className="wrap section reviews-section">
+      <div className="reviews-invite">
+        <div>
+          <span className="eyebrow">{local(['Misafir Notları', 'Guest Notes', 'Gästestimmen'], locale)}</span>
+          <h2>{local(['Deneyiminizi paylaşır mısınız?', 'Would you share your stay?', 'Möchten Sie Ihre Eindrücke teilen?'], locale)}</h2>
+          <p>{local([
+            'Lale Hotel’de geçirdiğiniz günler başka gezginlere de yol göstersin. Dilerseniz Google ya da Tripadvisor üzerinden birkaç satır bırakabilirsiniz.',
+            'Help fellow travellers discover Küçükçakıl. If you enjoyed your mornings with us, a few lines on Google or Tripadvisor mean the world to our family.',
+            'Helfen Sie anderen Reisenden, Küçükçakıl zu entdecken. Wenn Ihnen Ihr Aufenthalt gefallen hat, freuen wir uns über ein paar Zeilen auf Google oder Tripadvisor.',
+          ], locale)}</p>
+        </div>
+        <div className="reviews-actions">
+          <a className="review-platform-btn" href={hotel.googleProfile} target="_blank" rel="noreferrer">
+            <img src={assetUrl('/assets/brand/social/google.svg')} alt="" width="22" height="22" />
+            <span>
+              <strong>{local(['Google’da Yorum Bırak', 'Review on Google', 'Auf Google bewerten'], locale)}</strong>
+              <small><Star size={12} aria-hidden="true" /> {local(['Google Haritalar profilimiz', 'Our Google Maps profile', 'Unser Google-Maps-Profil'], locale)}</small>
+            </span>
+          </a>
+          <a className="review-platform-btn" href={hotel.tripadvisor} target="_blank" rel="noreferrer">
+            <img src={assetUrl('/assets/brand/social/tripadvisor.svg')} alt="" width="22" height="22" />
+            <span>
+              <strong>{local(['Tripadvisor’da Değerlendir', 'Review on Tripadvisor', 'Auf Tripadvisor bewerten'], locale)}</strong>
+              <small><Star size={12} aria-hidden="true" /> {local(['Tripadvisor misafir sayfası', 'Tripadvisor guest page', 'Tripadvisor-Gästeseite'], locale)}</small>
+            </span>
+          </a>
+        </div>
+      </div>
+
+      <div className="between-us">
+        <div className="between-us-copy">
+          <h3><Heart size={20} aria-hidden="true" /> {local(['Aramızda kalsın…', 'Just between us…', 'Unter uns gesagt…'], locale)}</h3>
+          <p>{local([
+            'Eğer konaklamanızda gözümüzden kaçan küçük bir detay, eksik hissettiğiniz bir dokunuş ya da “şöyle olsa daha güzel olurdu” dediğiniz bir şey olduysa; herkesin gördüğü yorumlardan önce doğrudan bize fısıldamanızı çok isteriz. Her notu ailece okuyor, bir sonraki sabahı daha iyi hazırlamak için saklıyoruz.',
+            'If there was a small detail we missed during your stay, or something you felt could be warmer or better, we would truly love to hear it privately before anywhere else. We read every note as a family and keep it close for tomorrow’s morning.',
+            'Wenn uns während Ihres Aufenthalts ein kleines Detail entgangen ist oder Sie sich etwas noch herzlicher gewünscht hätten, flüstern Sie es uns gern ganz direkt zu. Wir lesen jede Nachricht als Familie und nehmen sie uns für den nächsten Morgen zu Herzen.',
+          ], locale)}</p>
+        </div>
+
+        <form className="between-us-form" onSubmit={handlePrivateFeedback}>
+          <label>
+            <span className="sr-only">{local(['İsminiz (isteğe bağlı)', 'Your name (optional)', 'Ihr Name (optional)'], locale)}</span>
+            <input
+              type="text"
+              value={guestName}
+              onChange={e => { setGuestName(e.target.value); if (sent) setSent(false); }}
+              placeholder={local(['İsminiz (isteğe bağlı)', 'Your name (optional)', 'Ihr Name (optional)'], locale)}
+              maxLength="80"
+            />
+          </label>
+          <label>
+            <span className="sr-only">{local(['Bize iletmek istediğiniz not', 'Your private note to us', 'Ihre persönliche Nachricht an uns'], locale)}</span>
+            <textarea
+              rows="3"
+              required
+              value={note}
+              onChange={e => { setNote(e.target.value); if (sent) setSent(false); }}
+              placeholder={local(['Küçük bir not, bir öneri veya bir tebessüm…', 'A quiet note, a suggestion, or a kind thought…', 'Eine kleine Notiz, ein Wunsch oder ein Gedanke…'], locale)}
+              maxLength="1000"
+            />
+          </label>
+          <div className="between-us-submit">
+            <button type="submit" className="button button-outline">
+              {local(['Sessizce Bize İlet', 'Send Privately', 'Vertraulich senden'], locale)}
+            </button>
+            {sent && (
+              <p className="small" role="status">
+                {local(['Teşekkür ederiz, notunuz doğrudan ailemize ulaştı.', 'Thank you — your note has reached our family directly.', 'Vielen Dank — Ihre Nachricht ist direkt bei unserer Familie angekommen.'], locale)}
+              </p>
+            )}
+          </div>
+        </form>
+      </div>
+    </section>
   );
 }

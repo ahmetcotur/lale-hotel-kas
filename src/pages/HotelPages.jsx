@@ -3,7 +3,7 @@ import { ChevronLeft, ChevronRight, MapPin, Mail, Pause, Phone, Play, Search } f
 import { breakfastShowcase, hotel, hotelHighlights, hotelNearby, hotelPhotography, hotelSpaces, local, rooms, posts, activities } from '../data/hotel.js';
 import { analyticsId, track } from '../lib/analytics.js';
 import { pathFor, titles } from '../lib/routes.js';
-import { HotelMap, HotelProfileLinks, PageHeading, Photo, PhotoGallery } from '../components/HotelUI.jsx';
+import { HotelMap, HotelProfileLinks, PageHeading, Photo, PhotoGallery, GuestReviewsPrompt } from '../components/HotelUI.jsx';
 import { BookingSearch } from '../components/BookingSearch.jsx';
 
 const story = [
@@ -216,6 +216,8 @@ export function HomePage({ locale, stay, setStay, onSearch }) {
         <div className="wrap guide-preview">{posts.map(post => <PostCard key={post.id} post={post} locale={locale} />)}</div>
       </section>
 
+      <GuestReviewsPrompt locale={locale} />
+
       <section id={local(['iletisim', 'contact-us', 'kontaktiere-uns'], locale)} className="wrap section location-strip">
         <div><h2>{local(['Küçükçakıl’da buluşalım', 'Find us in Küçükçakıl', 'So finden Sie uns in Küçükçakıl'], locale)}</h2><p>{hotel.address}</p></div>
         <HotelProfileLinks locale={locale} directions />
@@ -371,7 +373,7 @@ export function ContactPage({ locale }) {
       <button className="button" type="submit">{local(['Mesaj Gönder', 'Send Message', 'Nachricht senden'], locale)}</button>
       {sent && <p className="small" role="status">{local(['Mesajınız alındı. En kısa sürede dönüş yapılacaktır; acil durumlar için WhatsApp veya telefon üzerinden doğrudan ulaşabilirsiniz.', 'Your message has been received. We will reply shortly; for urgent inquiries, reach us directly by phone or WhatsApp.', 'Ihre Nachricht wurde empfangen. Wir melden uns in Kürze; in dringenden Fällen erreichen Sie uns direkt telefonisch oder per WhatsApp.'], locale)}</p>}
     </form>
-  </section><HotelMap locale={locale} /></>;
+  </section><HotelMap locale={locale} /><GuestReviewsPrompt locale={locale} /></>;
 }
 
 const policies = {

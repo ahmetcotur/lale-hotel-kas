@@ -178,9 +178,12 @@ try {
   await page.goto(base + '/tr/iletisim/');
   await page.locator('input[name=name]').fill('Ayse Yilmaz');
   await page.locator('input[name=email]').fill('ayse@example.com');
-  await page.locator('textarea').fill('Konaklama bilgisi');
+  await page.locator('textarea[name=message]').fill('Konaklama bilgisi');
   await page.getByRole('button', { name: 'Mesaj Gönder' }).click();
-  await page.locator('p[role=status]').waitFor();
+  await page.locator('.surface-form p[role=status]').waitFor();
+  await page.locator('.between-us-form textarea').fill('Kahvaltı çok güzeldi.');
+  await page.getByRole('button', { name: 'Sessizce Bize İlet' }).click();
+  await page.locator('.between-us-form p[role=status]').waitFor();
   const response = await page.request.get(base + '/odalar', { maxRedirects: 0 });
   assert.equal(response.status(), 301);
   assert.equal(response.headers().location, '/tr/odalar/');

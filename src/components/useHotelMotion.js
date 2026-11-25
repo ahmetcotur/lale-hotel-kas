@@ -114,6 +114,14 @@ export function useHotelMotion(root, page) {
             if (eveningText) evTl.fromTo(eveningText, { y: 20 }, { y: -14 }, 0);
           }
 
+          // Yorum & Aramızda kalsın bölümü
+          element.querySelectorAll('.reviews-invite, .between-us').forEach(block => {
+            gsap.fromTo(block, { y: 24 }, {
+              y: 0, duration: .75, ease: 'power2.out', clearProps: 'transform',
+              scrollTrigger: { trigger: block, start: 'top 80%', once: true },
+            });
+          });
+
           // İletişim şeridi
           const locationStrip = element.querySelector('.location-strip');
           if (locationStrip) {

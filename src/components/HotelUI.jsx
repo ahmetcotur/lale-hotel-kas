@@ -3,6 +3,7 @@ import { ChevronDown, ChevronLeft, ChevronRight, Heart, Menu, Navigation, Star, 
 import { hotel, local, locales } from '../data/hotel.js';
 import sizes from '../data/photoSizes.json';
 import responsivePhotos from '../data/responsivePhotos.json';
+import googleReviews from '../data/googleReviews.json';
 import { assetUrl, pathFor, titles } from '../lib/routes.js';
 
 export function Photo({ name, alt, priority = false, sizes: displaySizes = '100vw', className }) {
@@ -204,6 +205,18 @@ export function GuestReviewsPrompt({ locale }) {
   const [sent, setSent] = useState(false);
   const [note, setNote] = useState('');
   const [guestName, setGuestName] = useState('');
+  const railRef = useRef(null);
+
+  const fiveStarReviews = (googleReviews.reviews ?? [])
+    .filter(entry => entry && entry.rating === 5 && entry.text?.trim())
+    .slice(0, 10);
+
+  function scrollRail(direction) {
+    const rail = railRef.current;
+    if (!rail) return;
+    const step = Math.max(280, Math.round(rail.clientWidth * 0.72));
+    rail.scrollBy({ left: direction * step, behavior: 'smooth' });
+  }
 
   function handlePrivateFeedback(event) {
     event.preventDefault();
@@ -242,6 +255,80 @@ export function GuestReviewsPrompt({ locale }) {
           </a>
         </div>
       </div>
+
+      {fiveStarReviews.length > 0 && (
+        <div className="google-reviews-wrap">
+          <div className="google-reviews-head">
+            <div className="google-reviews-meta-bar">
+              <img src={assetUrl('/assets/brand/social/google.svg')} alt="Google" width="22" height="22" />
+              <div>
+                <div className="google-reviews-title-row">
+                  <h3>{local(['Son 5 Yıldızlı Google Yorumları', 'Latest 5-Star Google Reviews', 'Neueste 5-Sterne-Google-Bewertungen'], locale)}</h3>
+                  {typeof googleReviews.rating === 'number' && typeof googleReviews.reviewCount === 'number' && (
+                    <span className="google-rating-pill">
+                      <Star size={13} fill="currentColor" aria-hidden="true" />
+                      {googleReviews.rating.toFixed(1)} / 5 · {googleReviews.reviewCount}{' '}
+                      {local(['Google yorumu', 'Google reviews', 'Google-Bewertungen'], locale)}
+                    </span>
+                  )}
+                </div>
+                <p className="small muted">{local([
+                  'Google Haritalar üzerindeki en güncel 10 beş yıldızlı misafir yorumu.',
+                  'The 10 most recent five-star guest reviews from Google Maps.',
+                  'Die 10 aktuellsten 5-Sterne-Gästebewertungen von Google Maps.',
+                ], locale)}</p>
+              </div>
+            </div>
+            <div className="google-reviews-controls">
+              <button
+                type="button"
+                className="icon-button"
+                aria-label={local(['Önceki yorum', 'Previous review', 'Vorherige Bewertung'], locale)}
+                onClick={() => scrollRail(-1)}
+              >
+                <ChevronLeft size={19} aria-hidden="true" />
+              </button>
+              <button
+                type="button"
+                className="icon-button"
+                aria-label={local(['Sonraki yorum', 'Next review', 'Nächste Bewertung'], locale)}
+                onClick={() => scrollRail(1)}
+              >
+                <ChevronRight size={19} aria-hidden="true" />
+              </button>
+            </div>
+          </div>
+
+          <div ref={railRef} className="google-reviews-rail" role="list">
+            {fiveStarReviews.map(entry => (
+              <article key={entry.id} className="google-review-card" role="listitem">
+                <div className="google-review-stars" aria-label={local(['5 üzerinden 5 yıldız', '5 out of 5 stars', '5 von 5 Sternen'], locale)}>
+                  {[0, 1, 2, 3, 4].map(idx => (
+                    <Star key={idx} size={14} fill="currentColor" aria-hidden="true" />
+                  ))}
+                </div>
+                <p className="google-review-text">{entry.text}</p>
+                <footer className="google-review-meta">
+                  <div>
+                    <strong>{entry.author}</strong>
+                    {(entry.relativeTime || entry.date) && (
+                      <small>{entry.relativeTime || entry.date}</small>
+                    )}
+                  </div>
+                  <a
+                    className="text-link small"
+                    href={entry.url || googleReviews.profileUrl || hotel.googleProfile}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Google
+                  </a>
+                </footer>
+              </article>
+            ))}
+          </div>
+        </div>
+      )}
 
       <div className="between-us">
         <div className="between-us-copy">

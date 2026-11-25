@@ -1,5 +1,6 @@
 import { hotel, hotelNearby, languageTags, local, locales } from '../data/hotel.js';
 import sizes from '../data/photoSizes.json';
+import googleReviews from '../data/googleReviews.json';
 import { pathFor, titles } from './routes.js';
 
 const descriptions = {
@@ -106,6 +107,17 @@ export function metadata({ locale, page, item }) {
       priceCurrency: 'TRY',
       availability: 'https://schema.org/InStock',
     },
+    ...(typeof googleReviews.rating === 'number' && typeof googleReviews.reviewCount === 'number' && googleReviews.reviewCount > 0
+      ? {
+          aggregateRating: {
+            '@type': 'AggregateRating',
+            ratingValue: googleReviews.rating,
+            reviewCount: googleReviews.reviewCount,
+            bestRating: 5,
+            worstRating: 1,
+          },
+        }
+      : {}),
   }, {
     '@type': 'WebSite',
     '@id': hotel.url + '/#website',
